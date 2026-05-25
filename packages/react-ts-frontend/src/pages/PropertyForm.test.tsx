@@ -66,9 +66,9 @@ describe("PropertyRegisterLL form", () => {
 
     // ensure fetch called with correct endpoint and payload shape
     	await expect(mockFetch).toHaveBeenCalledOnce();
-    	const [url, options] = mockFetch.mock.calls[0];
+    	const [url, options] = mockFetch.mock.calls[0] as unknown as [string, RequestInit];
     	expect(url).toMatch(/\/api\/propertyreg$/);
-    	const body = JSON.parse(options.body);
+    	const body = JSON.parse((options.body as string) || '{}');
     	expect(body).toEqual(expect.objectContaining({
       		propAddress: "123 Main St",
       		propCity: "Townsville",
