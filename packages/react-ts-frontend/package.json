@@ -9,7 +9,8 @@
     "coverage": "vitest run --coverage",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.35.0",
@@ -19,7 +20,8 @@
     "@tailwindcss/postcss": "^4.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-router-dom": "^7.15.0"
+    "react-router-dom": "^7.15.0",
+    "react-ts-frontend": "file:"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -35,6 +37,7 @@
     "eslint": "^10.2.1",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
+    "gh-pages": "^6.3.0",
     "globals": "^17.5.0",
     "jsdom": "^29.1.1",
     "postcss": "^8.5.14",
